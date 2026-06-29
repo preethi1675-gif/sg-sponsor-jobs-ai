@@ -1,9 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI(
-    title="SG Sponsor Jobs AI",
-    version="1.0.0"
-)
+app = FastAPI(title="SG Sponsor Jobs AI")
 
 @app.get("/")
 def home():
@@ -17,4 +14,11 @@ def home():
 def health():
     return {
         "status": "healthy"
+    }
+
+@app.get("/jobs")
+def jobs():
+    return {
+        "count": 0,
+        "jobs": []
     }
